@@ -1,0 +1,7 @@
+/**index.wxss**/
+.container {
+  background-color: #F7F8FA;
+  padding:0;
+  height: 100vh;
+}
+

@@ -1,0 +1,11 @@
+/* pages/settings/page/reset_name/index.wxss */
+.uname{
+  padding-top: 1rem;
+  background: rgb(247,248,250);
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+.submit{
+  margin: 1rem;
+}

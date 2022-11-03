@@ -1,0 +1,18 @@
+<!--components/profile/index.wxml-->
+<view class="profile">
+  <view class="avatar">
+    <van-image width="7rem" height="7rem" fit="cover" round src="{{user.uAvatar}}" />
+  </view>
+  <van-cell-group inset>
+    <van-cell title="名称" value="{{user.uName}}" />
+    <van-cell title="电话" value="{{user.uMoblile}}"/>
+    <van-cell title="学校" value="重庆文理学院"/>
+    <van-cell title="院系" value="人工智能学院"/>
+    <van-cell title="我的收藏"  is-link url="/pages/index" />
+    <van-cell title="设置"  is-link url="/pages/settings/index" />
+  </van-cell-group>
+  <view class="logout">
+    <van-button  type="danger"  bindtap="logout" block>退出登陆</van-button>
+  </view>
+  
+</view>

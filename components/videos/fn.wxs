@@ -1,0 +1,24 @@
+var isUp = function (list, user) {
+  if (typeof list == 'string') {
+    var list = list.split(',')
+  }
+  for (var index = 0; index < list.length; index++) {
+    var element = list[index];
+    if (element == user) {
+      return true
+    }
+  }
+}
+var getLength = function (list) {
+  var list = list.split(',')
+  if (list.length > 0) {
+    if (list[0]) {
+      return list.length
+    }
+  }
+  return 0
+}
+module.exports = {
+  isUp: isUp,
+  getLength: getLength
+};

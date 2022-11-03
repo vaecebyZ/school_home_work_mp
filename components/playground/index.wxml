@@ -1,0 +1,127 @@
+<view class="page">
+
+  <scroll-view style="margin-bottom: 100px;" scroll-y refresher-triggered='{{isLoading}}' refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-background="#E3E3E3" bindrefresherrefresh="pullDownRefresh" bindscrolltolower="loadMore">
+    <!-- 卡片内容 -->
+    <view class="card">
+      <view class="user">
+        <view class="avatar">
+          <van-image round width="40" height="40" src="{{user.uAvatar}}" />
+        </view>
+        <view>
+          <view class="userName">{{user.uName}}</view>
+          <view class="date">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="content">
+        一只敏捷的狐狸跳过棕色的懒狗。
+        两只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+      </view>
+      <view class="bottom-item">
+        <view>
+          <van-icon name="comment-o" /><text style="font-size: 14px;">999</text>
+        </view>
+        <view>
+          <van-icon name="good-job-o" /><text style="font-size: 14px;">10</text>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="user">
+        <view class="avatar">
+          <van-image round width="40" height="40" src="{{user.uAvatar}}" />
+        </view>
+        <view>
+          <view class="userName">{{user.uName}}</view>
+          <view class="date">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="content">
+        一只敏捷的狐狸跳过棕色的懒狗。
+        两只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+      </view>
+      <view class="bottom-item">
+        <view>
+          <van-icon name="comment-o" /><text style="font-size: 14px;">999</text>
+        </view>
+        <view>
+          <van-icon name="good-job-o" /><text style="font-size: 14px;">10</text>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="user">
+        <view class="avatar">
+          <van-image round width="40" height="40" src="{{user.uAvatar}}" />
+        </view>
+        <view>
+          <view class="userName">{{user.uName}}</view>
+          <view class="date">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="content">
+        一只敏捷的狐狸跳过棕色的懒狗。
+        两只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+      </view>
+      <view class="bottom-item">
+        <view>
+          <van-icon name="comment-o" /><text style="font-size: 14px;">999</text>
+        </view>
+        <view>
+          <van-icon name="good-job-o" /><text style="font-size: 14px;">10</text>
+        </view>
+      </view>
+    </view>
+    <view class="card">
+      <view class="user">
+        <view class="avatar">
+          <van-image round width="40" height="40" src="{{user.uAvatar}}" />
+        </view>
+        <view>
+          <view class="userName">{{user.uName}}</view>
+          <view class="date">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="content">
+        一只敏捷的狐狸跳过棕色的懒狗。
+        两只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+        三只敏捷的狐狸跳过棕色的懒狗。
+      </view>
+      <view class="bottom-item">
+        <view>
+          <van-icon name="comment-o" /><text style="font-size: 14px;">999</text>
+        </view>
+        <view>
+          <van-icon name="good-job-o" /><text style="font-size: 14px;">10</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 悬浮球 -->
+  <van-popup show="{{ isActive }}" round closeable close-icon="success" position="bottom" close-on-click-overlay="{{false}}" custom-style="height:70%; padding:100rpx  20rpx 0 60rpx" bind:close="onClose"><textarea style="height: 40%; border: 1px solid #d6d6d6; border-radius: 5px;" type="text" /></van-popup>
+  <view bindtap="clickBall" class="playground-ball">
+    <van-icon class="{{isActive ? 'active' : 'plus' }}" name="plus" />
+  </view>
+</view>

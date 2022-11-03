@@ -1,0 +1,9 @@
+<!--components/settins/index.wxml-->
+<view class="settins">
+
+  <van-cell-group>
+    <van-cell title="修改名称" is-link url="/pages/settings/page/reset_name/index" />
+    <van-cell title="修改密码" is-link url="/pages/settings/page/reset_password/index" />
+  </van-cell-group>
+
+</view>

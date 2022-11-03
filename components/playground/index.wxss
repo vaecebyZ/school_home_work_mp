@@ -1,0 +1,71 @@
+/* components/playground/index.wxss */
+.page {
+  height: 90vh;
+  width: 100%;
+  /* background-color:; */
+}
+
+.playground-ball {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 78%;
+  left: 40%;
+  justify-content: center;
+  background-color: #ff99aa;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  box-shadow: 1px 2px 18px 0px rgba(50, 50, 50, 0.43);
+  z-index: 999;
+}
+
+.playground-ball:hover {
+  opacity: .5;
+}
+
+.plus {
+  color: white;
+  font-size: 60rpx;
+  opacity: .5;
+}
+
+.active {
+  transform: rotate(45deg);
+  color: white;
+  opacity: .5;
+  font-size: 60rpx;
+}
+
+.card {
+  background-color: white;
+
+  width: 100vw;
+  margin-top: 10px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  /* margin-right: 5px; */
+  color: darkgrey;
+  padding: 10px;
+}
+
+.content {
+  padding: 0 20px 20px 20px;
+  max-height: 45px;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #90A4AE;
+  text-overflow: ellipsis;
+}
+
+.bottom-item {
+  display: flex;
+  font-size: 20px;
+  padding: 5px;
+  justify-content: space-around;
+}

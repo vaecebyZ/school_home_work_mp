@@ -1,0 +1,13 @@
+<view class="pwd">
+
+  <van-cell-group>
+    <van-field label="原密码" value="{{ oldPwd }}" placeholder="请输入密码" border="{{ false }}" type="password" bind:change="setOldPwd" />
+    <van-field label="新密码" value="{{ newPwd }}" placeholder="请输入密码" border="{{ false }}" type="password" bind:change="setNewPwd" />
+    <van-field label="重复密码" value="{{ confirmPwd }}" placeholder="请输入密码" border="{{ false }}" type="password" bind:change="setConfirmPwd" />
+  </van-cell-group>
+
+  <view class="submit">
+    <van-button type="warning" bindtap="submit" block>提交</van-button>
+  </view>
+
+</view>

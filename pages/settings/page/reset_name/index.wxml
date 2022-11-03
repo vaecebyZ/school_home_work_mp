@@ -1,0 +1,11 @@
+<view class="uname">
+
+  <van-cell-group>
+    <van-field label="用户名" value="{{ newName }}" placeholder="请输入用户名" border="{{ false }}" type="text" bind:change="onChange" />
+  </van-cell-group>
+
+  <view class="submit">
+    <van-button type="warning" bindtap="submit" block>提交</van-button>
+  </view>
+  
+</view>

@@ -1,0 +1,76 @@
+<!--components/videos/index.wxml-->
+<!-- <text>视频</text> -->
+<!-- <video src="https://sanka.sbs/video/1.mp4"></video> -->
+<view class="video">
+  <view class="videContent">
+    <video src="{{playing.src}}">
+    </video>
+  </view>
+  <view class="controllerBar">
+    <view>
+      {{playing.name}}
+    </view>
+    <view class="btns">
+      <van-button bindtap="changePage" data-index="0" size="small" round type="info">
+        <van-icon name="arrow-left" /> 上一集
+      </van-button>
+      <van-button bindtap="changePage" data-index="1" style="margin-left: 5px;" round size="small" type="info"> 下一集
+        <van-icon name="arrow" />
+      </van-button>
+    </view>
+
+  </view>
+  <wxs src="./fn.wxs" module="fn" />
+  <view class="ups">
+
+    <!-- 点赞 -->
+    <view bindtap="videoUp" data-type="0">
+      <van-icon name="good-job" wx:if="{{fn.isUp(playing.upList,user.uId)}}" class="icons-s" />
+      <van-icon wx:else name="good-job-o" class="icons" />
+      <text class="numberFont">{{playing.upList[0]== "" ? 0: playing.upList.length}}</text>
+    </view>
+
+    <!-- 收藏 -->
+    <view bindtap="videoUp" data-type="1">
+      <van-icon name="like" wx:if="{{fn.isUp(playing.collectionList,user.uId)}}" class="icons-s" />
+      <van-icon name="like-o" wx:else class="icons" /><text class="numberFont">{{playing.collectionList[0] == "" ? 0 : playing.collectionList.length}}</text>
+    </view>
+  </view>
+
+  <view class="listOfvides">
+    <view bindtap="changevideos" data-item="{{item}}" wx:key="vId" class="listOfBlock  {{playing.id == item.vId ? 'active' : ''}}" wx:for="{{videoList}}">{{index+1}}集</view>
+  </view>
+
+  <view class="inputBar">
+    <input bindblur="getComment" placeholder="说点啥子嘛。" class="inputInner" type="text" />
+    <view bindtouchend="endTouched" bindtouchstart="startTouched" class="sendUp {{clicked? 'clicked' : ''}}">发送</view>
+  </view>
+
+  <view style="height: 12.5rem; overflow-y: scroll;">
+    <view wx:for="{{commentList}}" class="comments">
+      <view class="user">
+        <view class="avatar">
+          <van-image round width="40" height="40" src="{{item.avatar}}" />
+        </view>
+        <view>
+          <view class="userName">{{item.userName}}</view>
+          <view class="date">{{item.time}}</view>
+        </view>
+      </view>
+      <view class="content">
+        {{item.content}}
+      </view>
+      <view class="options">
+        <van-icon wx:if="{{fn.isUp(item.ups,user.uId)}}" name="good-job" class="up-icon icons-s" />
+        <van-icon wx:else data-comment="{{item}}" bindtap="upVideo" name="good-job-o" class="up-icon" />
+        {{fn.getLength(item.ups)}}
+        <van-icon wx:if="{{item.down}}" data-comment="{{item}}" bindtap="downVideo" class="down  icons-s" name="good-job" />
+        <van-icon wx:else data-comment="{{item}}" bindtap="downVideo" class="down" name="good-job-o" />
+      </view>
+    </view>
+  </view>
+
+  <view class="empty">
+    <van-empty description="ㄟ( ▔, ▔ )ㄏ" wx:if="{{commentList.length == 0}}"></van-empty>
+  </view>
+</view>

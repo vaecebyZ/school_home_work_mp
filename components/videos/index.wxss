@@ -1,0 +1,161 @@
+/* components/videos/index.wxss */
+.video {
+  width: 100vw;
+  /* height: 100vh; */
+  margin-bottom: 90px;
+  background-color: rgb(236, 236, 236);
+}
+
+.videContent {
+  display: flex;
+  justify-content: center;
+}
+
+video {
+  width: 100%;
+}
+
+.controllerBar {
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+}
+
+.btns {
+  padding: 10px;
+}
+
+.listOfvides {
+  margin-top: -4px;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  background-color: white;
+  padding: 0 10px 10px 10px;
+}
+
+.listOfBlock {
+  width: 40px;
+  flex-shrink: 0;
+  background-color: white;
+  margin: 10px 5px 0 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.active {
+  background-color: #ECF9FF;
+}
+
+.ups {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  height: 60px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.icons {
+  font-size: 30px;
+  color: lightseagreen;
+}
+
+.icons-s {
+  font-size: 30px;
+  color: rgb(235, 125, 143);
+}
+
+.numberFont {
+  display: inline-block;
+}
+
+.inputBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  height: 40px;
+  background: #FFFFFF;
+}
+
+.inputInner {
+  width: 80%;
+  height: 80%;
+  margin-left: 10px;
+  padding-left: 10px;
+  background-color: #EFEFF4;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.sendUp {
+  color: #578ABC;
+  background: white;
+  margin-right: 10px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.clicked {
+  background-color: lightgray;
+  border-radius: 5px;
+  opacity: .7;
+}
+
+.comments {
+  background-color: white;
+  margin-top: 5px;
+}
+
+.avatar {
+  margin: 0 10px 0 10px;
+}
+
+.userName {
+  color: grey;
+}
+
+.date {
+  color: #adadad;
+}
+
+.user {
+  display: flex;
+}
+
+.content {
+  display: block;
+  margin: 10px 20px 10px 60px;
+}
+
+.down {
+  transform: rotateX(180deg);
+  margin-left: 5px;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.options {
+  margin-left: 60px;
+}
+
+.empty{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 0;
+  margin-top: -40px;
+}
+.up-icon{
+  font-size: 1.3rem;
+  font-weight: 300;
+}

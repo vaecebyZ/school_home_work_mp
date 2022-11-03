@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/welcome/index",
+    "pages/logs/logs",
+    "pages/login/index",
+    "pages/settings/index",
+    "pages/settings/page/reset_name/index",
+    "pages/settings/page/reset_password/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
