@@ -21,6 +21,17 @@
   z-index: 999;
 }
 
+.inputTextContent {
+  background-color: #F4F5F7;
+  height: 40%;
+  border: 2px solid #E5E9EF;
+  border-radius: 5px;
+}
+
+.isFocused {
+  border: 2px solid #00A1D6;
+}
+
 .playground-ball:hover {
   opacity: .5;
 }
@@ -40,7 +51,6 @@
 
 .card {
   background-color: white;
-
   width: 100vw;
   margin-top: 10px;
 }
@@ -48,7 +58,6 @@
 .user {
   display: flex;
   align-items: center;
-  /* margin-right: 5px; */
   color: darkgrey;
   padding: 10px;
 }
