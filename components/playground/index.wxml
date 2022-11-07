@@ -1,32 +1,30 @@
 <view class="page">
 
-  <scroll-view style="height: 97%;"  scroll-y refresher-triggered='{{isLoading}}' refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-background="#E3E3E3" bindrefresherrefresh="pullDownRefresh" bindscrolltolower="loadMore">
+  <scroll-view style="height: 97%;" scroll-y refresher-triggered='{{isLoading}}' refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-background="#E3E3E3" bindrefresherrefresh="pullDownRefresh" bindscrolltolower="loadMore">
     <!-- 卡片内容 -->
     <view class="card" wx:for="{{postList}}">
-    
       <view class="user">
-
         <view class="avatar">
           <van-image round width="40" height="40" src="{{item.uAvatar}}" />
         </view>
 
         <view>
-          <view class="userName">{{item.pId}}</view>
+          <view class="userName">{{item.uName}}</view>
           <view class="date">{{item.pTime}}</view>
         </view>
 
       </view>
 
       <view class="content">
-        {{item.pContent}}
+        {{item.pTitle}}
       </view>
 
       <view class="bottom-item">
         <view>
-          <van-icon name="comment-o" /><text style="font-size: 14px;">999</text>
+          <van-icon name="comment-o" /><text style="font-size: 14px;">{{item.comments}}</text>
         </view>
         <view>
-          <van-icon name="good-job-o" /><text style="font-size: 14px;">10</text>
+          <van-icon bindtap="upPost" data-ups="{{item.ups}}" data-pId="{{item.pId}}" name="good-job-o" /><text style="font-size: 14px;">{{item.ups}}</text>
         </view>
       </view>
 
@@ -35,7 +33,10 @@
   </scroll-view>
 
   <!-- 悬浮球 -->
-  <van-popup wx:if="{{ isActive }}" show="{{ isActive }}" round closeable close-icon="success" position="bottom" close-on-click-overlay="{{false}}" custom-style="height:70%; padding:100rpx  20rpx 0 60rpx" bind:close="onClose"><textarea bindfocus="setFocusName" bindblur="removeFocusName" class="{{isFocus ? 'inputTextContent isFocused' : 'inputTextContent'}}" type="text" /></van-popup>
+  <van-popup wx:if="{{ isActive }}" show="{{ isActive }}" round closeable close-icon="success" position="bottom" close-on-click-overlay="{{false}}" custom-style="height:70%; padding:100rpx  20rpx 0 60rpx" bind:close="onClose">
+    <input bindinput="titleInput" placeholder="标题" style="border: 1px solid #E5E9EF;width: 90%; margin-bottom: 10px;  border-radius: 5px;"/>
+    <textarea bindfocus="setFocusName" bindinput="contentInput" bindblur="removeFocusName" class="{{isFocus ? 'inputTextContent isFocused' : 'inputTextContent'}}" type="text" />
+  </van-popup>
 
   <view bindtap="clickBall" class="playground-ball">
     <van-icon class="{{isActive ? 'active' : 'plus' }}" name="plus" />
