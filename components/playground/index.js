@@ -176,6 +176,13 @@ Component({
           })
         }
       })
+    },
+    toDetail(e){
+      app.globalData.postId = e.currentTarget.dataset.item.pId;
+
+      wx.navigateTo({
+        url: '../detail/index',
+      })
     }
   },
   lifetimes: {

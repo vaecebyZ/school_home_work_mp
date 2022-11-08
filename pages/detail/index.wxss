@@ -1,0 +1,18 @@
+/* pages/detail/index.wxss */
+.page{
+  background-color: #F7F7F7;
+  height: 100vh;
+}
+
+.topCard{
+  height: 30vh;
+  background-color: #FFFFFF;
+  border-radius: 0 0  10px 10px;
+}
+
+.reback{
+  height: 69%;
+  background-color: #FFFFFF;
+  margin-top: 6px;
+}
+

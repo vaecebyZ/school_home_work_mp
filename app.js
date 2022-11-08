@@ -15,6 +15,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    baseUrl: "http://127.0.0.1:1213/api"
+    baseUrl: "http://127.0.0.1:1213/api",
+    postId:null,
   }
 })

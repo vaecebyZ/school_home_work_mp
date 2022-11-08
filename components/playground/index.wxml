@@ -2,7 +2,7 @@
 
   <scroll-view style="height: 97%;" scroll-y refresher-triggered='{{isLoading}}' refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-background="#E3E3E3" bindrefresherrefresh="pullDownRefresh" bindscrolltolower="loadMore">
     <!-- 卡片内容 -->
-    <view class="card" wx:for="{{postList}}">
+    <view bindtap="toDetail" data-item="{{item}}" class="card" wx:key="id" wx:for="{{postList}}">
       <view class="user">
         <view class="avatar">
           <van-image round width="40" height="40" src="{{item.uAvatar}}" />
@@ -34,7 +34,7 @@
 
   <!-- 悬浮球 -->
   <van-popup wx:if="{{ isActive }}" show="{{ isActive }}" round closeable close-icon="success" position="bottom" close-on-click-overlay="{{false}}" custom-style="height:70%; padding:100rpx  20rpx 0 60rpx" bind:close="onClose">
-    <input bindinput="titleInput" placeholder="标题" style="border: 1px solid #E5E9EF;width: 90%; margin-bottom: 10px;  border-radius: 5px;"/>
+    <input bindinput="titleInput" placeholder="标题" style="border: 1px solid #E5E9EF;width: 90%; margin-bottom: 10px;  border-radius: 5px;" />
     <textarea bindfocus="setFocusName" bindinput="contentInput" bindblur="removeFocusName" class="{{isFocus ? 'inputTextContent isFocused' : 'inputTextContent'}}" type="text" />
   </van-popup>
 

@@ -47,7 +47,7 @@
   </view>
 
   <view style="height: 12.5rem; overflow-y: scroll;">
-    <view wx:for="{{commentList}}" class="comments">
+    <view wx:for="{{commentList}}" wx:key="id" class="comments">
       <view class="user">
         <view class="avatar">
           <van-image round width="40" height="40" src="{{item.avatar}}" />
