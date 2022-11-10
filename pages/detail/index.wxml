@@ -1,8 +1,39 @@
 <view class="page">
   <view class="topCard">
-  
+    <view class="title">
+      {{post.pTitle}}
+    </view>
+    <view class="userInfo">
+      <van-image round width="40" height="40" src="{{post.uAvatar}}" style="margin:0 10px;" />
+      <view>
+        <view class="userName">{{post.uName}}</view>
+        <view class="postTime">{{post.pTime}}</view>
+      </view>
+    </view>
+    <view class="content">
+      {{post.pContent}}
+    </view>
   </view>
   <view class="reback">
-  
+    <view class="tab">
+      全部回复
+    </view>
+
+    <view wx:key="rId" wx:for="{{post.replayList}}" style="margin-bottom: 10px;display: block;">
+      <view class="userInfo">
+        <van-image round width="40" height="40" src="{{item.uAvatar}}" style="margin:0 10px;" />
+        <view>
+          <view class="userName">{{item.uName}}</view>
+          <view class="postTime">{{index+1}} 楼 | {{ item.rTime}}</view>
+        </view>
+      </view>
+      <view class="rContent">
+        {{item.rContent}}
+      </view>
+    </view>
+  </view>
+  <view class="inputBar">
+    <input bindinput="getComment" placeholder="说点啥子嘛。" class="inputInner" type="text" />
+    <view bindtouchend="endTouched" bindtouchstart="startTouched" class="sendUp {{clicked? 'clicked' : ''}}">发送</view>
   </view>
 </view>
